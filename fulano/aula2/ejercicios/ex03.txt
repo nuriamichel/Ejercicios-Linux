@@ -1,0 +1,4 @@
+cp -f : Hace una copia forzada al remover el archivo destino si es necesario.
+mkdir -p, --parents : Crea los directorios padre que falten para cada argumento
+directorio.
+rm -d, --dir : Elimina directorios vacios.

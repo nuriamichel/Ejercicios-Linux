@@ -1,0 +1,4 @@
+ls -s : muestra delante del nombre del fichero el tamaño en kilobytes del
+mismo.
+ls -a : muestra los archivos ocultos.
+ls -t : muestra ordenado por la fecha de ultima modificaciòn. 

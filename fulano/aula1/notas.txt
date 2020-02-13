@@ -1,0 +1,75 @@
+ls
+
+Imprime información relativa a los archivos de un directorio.
+
+Parámetros
+
+    ls -a
+    Lista todas las entradas de un directorio, incluso aquellas que comienzan con un punto.
+    ls -A
+    Es igual al anterior, a excepción de aquellas cuyo nombre completo es “.” y “..”
+    ls -b
+    Fuerza la impresión de caracteres no representables en notación octal (\ddd).
+    ls -t
+    Realiza una clasificación cronológica, en lugar de alfabética. Por defecto utiliza la fecha de la última modificación del archivo o directorio.
+
+cp
+
+Permite copiar archivos y directorios. Su sintaxis es cp [-IR] . Donde al comando cp le pasamos como argumentos indispensables, la entrada que serían los ficheros o el fichero que queremos copiar, y la salida que sería el lugar (directorio o subdirectorio) en donde queremos dejar la copia.
+
+Parámetros:
+
+    -I Para crear enlaces
+    -R Copia recursivamente todos los ficheros que cuelgan de la ruta especificada
+
+mkdir
+
+Crea directorios.
+
+Parámetros:
+
+    -p permite crear varios niveles de directorios a la vez, siempre y cuando exista un primer directorio.
+
+rmdir
+
+Borra directorios que estén vacíos y existan.
+
+Parámetros:
+
+    -p permite borrar varios niveles de directorios a la vez, siempre y cuando los directorios estén vacíos.
+
+mv
+
+Mueve (renombra) ficheros.
+
+Parámetros:
+
+    -f Borrar los archivos de destino existentes sin preguntar al usuario.
+    -i Lo contrario de -f; pregunta por cada archivo a sobreescribir antes de hacerlo.
+    -v Muestra el nombre de cada archivo a ser movido.
+
+rm
+
+Permite borrar ficheros o directorios, no borra directorios. Pero
+cuando se da la opción -r o -R, se borra el árbol de directorios entero
+
+Parámetros:
+
+    -f Elimina todos los archivos en un directorio sin preguntar al usuario.
+    -i Interactivo. Con esta opción, rm pide confirmación antes de eliminar cualquier archivo.
+    -r (ó) -R Elimina directorios y subdirectorios reiterativamente en la lista de argumentos.
+
+touch
+
+Crea un archivo, también permite modificar las fecha de acceso y modificación. 
+
+Parámetros:
+
+    -a Cambia la hora de fecha de acceso del archivo
+    -m Cambia la fecha de modificación
+    -r archivo Toma la fecha del archivo como referencia
+
+
+
+
+

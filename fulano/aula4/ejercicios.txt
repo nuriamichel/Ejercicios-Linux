@@ -1,0 +1,133 @@
+EJERCICIO 1
+
+1.¿Qué procesos ejecuta el usuario?
+
+   Comando: ps -fu nuria
+   Resultado:
+UID        PID  PPID  C STIME TTY          TIME CMD
+nuria     1290     1  0 08:30 ?        00:00:00 /lib/systemd/systemd --user
+nuria     1291  1290  0 08:30 ?        00:00:00 (sd-pam)
+nuria     1304     1  0 08:30 ?        00:00:00 /usr/bin/gnome-keyring-daemon --
+nuria     1308  1287  0 08:30 tty2     00:00:00 /usr/lib/gdm3/gdm-x-session --ru
+nuria     1310  1308  0 08:30 tty2     00:00:51 /usr/lib/xorg/Xorg vt2 -displayf
+nuria     1315  1290  0 08:30 ?        00:00:01 /usr/bin/dbus-daemon --session -
+nuria     1319  1308  0 08:30 tty2     00:00:00 /usr/lib/gnome-session/gnome-ses
+nuria     1419     1  0 08:30 ?        00:00:00 /usr/bin/VBoxClient --clipboard
+nuria     1420  1419  0 08:30 ?        00:00:00 /usr/bin/VBoxClient --clipboard
+nuria     1429     1  0 08:30 ?        00:00:00 /usr/bin/VBoxClient --display
+nuria     1430  1429  0 08:30 ?        00:00:00 /usr/bin/VBoxClient --display
+
+2.¿Qué procesos están ejecutando todos los usuarios? 
+   Comando: ps -e
+   Resultado:
+PID TTY          TIME CMD
+    1 ?        00:00:03 systemd
+    2 ?        00:00:00 kthreadd
+    3 ?        00:00:00 rcu_gp
+    4 ?        00:00:00 rcu_par_gp
+    6 ?        00:00:00 kworker/0:0H-kb
+    9 ?        00:00:00 mm_percpu_wq
+   10 ?        00:00:01 ksoftirqd/0
+   11 ?        00:00:03 rcu_sched
+   12 ?        00:00:00 migration/0
+   13 ?        00:00:00 idle_inject/0
+   14 ?        00:00:00 cpuhp/0
+   15 ?        00:00:00 kdevtmpfs
+
+3. Abra Firefox y encuentre su PID
+   Comando: ps para ver su pid y para abrirlo firefox &
+   Resultado:
+PID TTY          TIME CMD
+ 2032 pts/1    00:00:00 bash
+ 2430 pts/1    00:00:29 firefox
+ 2469 pts/1    00:00:02 Web Content
+ 2515 pts/1    00:00:01 WebExtensions
+ 2562 pts/1    00:00:00 Web Content
+ 2620 pts/1    00:00:00 ps
+
+4.Mata a Firefox con el comando kill 
+   Comando: kill 2430
+   Resultado: Mata a Firefox
+
+5. Abra gedit a través de la línea de comando y póngalo en segundo plano con Control + Z bg
+<enter>
+Resultado:
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ gedit
+^Z
+[1]+  Detenido                gedit
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ bg
+[1]+ gedit &
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$
+
+6. trae gedit de nuevo con fg
+Resultado:
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ gedit &
+[3] 5123
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ fg
+[3]   Hecho                   gedit
+
+7. Use top para determinar qué procesos consumen la mayoría de los recursos 
+   Comando: top
+   Resultado: 
+
+  PID USUARIO   PR  NI    VIRT    RES    SHR S %CPU %MEM     HORA+ ORDEN        
+ 3394 nuria     20   0 3162376 294936  57444 S  7,9 14,5   3:49.06 Web Content  
+ 1496 nuria     20   0 3030756 221596  65660 S  4,3 10,9   4:32.24 gnome-shell  
+ 1310 nuria     20   0  446256  78040  44752 S  4,0  3,8   1:16.17 Xorg         
+ 1842 nuria     20   0  806172  17520  11096 S  2,0  0,9   0:22.86 gnome-termi+ 
+ 3266 nuria     20   0 3392168 238872  71928 S  1,3 11,7   2:24.21 firefox      
+ 1506 nuria      9 -11 1696924   6892   4936 S  1,0  0,3   0:21.46 pulseaudio   
+ 1103 gdm       20   0 2921336  45192  16884 S  0,7  2,2   0:19.19 gnome-shell  
+ 3421 nuria     20   0 3440232 537036  72060 S  0,7 26,4   2:10.09 Web Content  
+    1 root      20   0  225492   3488   1772 S  0,3  0,2   0:03.68 systemd      
+ 4339 nuria     20   0   49144   3720   2960 R  0,3  0,2   0:00.08 top  
+
+8. Mata algunos procesos no esenciales con las teclas superior y "k"
+
+Primero usamos top, para mostrar los procesos del usuario luego shift m y 
+k y ponemos el PID de cualquier proceso.
+
+
+
+EJERCICIO 2
+
+1.Crear un script llamado forever.sh:
+    Comando: vim forever.sh
+
+2.Dar permisos de ejecucion:
+    Comando: chmod 700 forever.sh
+
+3.Ejecutar el script:
+    Comando: ./forever.sh
+
+4.Colocar el script en background:
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ ./forever.sh
+Starting the infinite process
+^Z
+[3]+  Detenido                ./forever.sh
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ bg
+[3]+ ./forever.sh &
+
+
+5.Intente encontrarlo con ps:
+    PID TTY          TIME CMD
+ 2032 pts/1    00:00:00 bash
+ 4739 pts/1    00:00:00 vim
+ 4913 pts/1    00:00:00 forever.sh
+ 4960 pts/1    00:00:00 sleep
+ 4968 pts/1    00:00:00 ps
+
+6.Matelo con kill:
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ kill 4913
+[3]-  Terminado               ./forever.sh
+
+
+7.Ejecutarlo con nohup:
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ nohup ./forever.sh > salida.txt 2> salida.err &
+[2] 5032
+
+
+8.Cierre terminal y vuelva abrirlo. El proceso sigue corriendo?
+Si, el proceso sigue corriendo.
+

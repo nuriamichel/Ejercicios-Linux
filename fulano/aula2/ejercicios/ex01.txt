@@ -1,0 +1,6 @@
+ls :Lo que nos muestra es un listado con los archivos y directorios de un determinado
+directorio. Los resultados se muestran ordenados alfabéticamente.
+ls -m : Nos muestra los archivos en una línea y separados por comas.
+ls -l : Nos muestra un listado en el formato largo, con información de
+permisos, número de enlaces asociados al archivo, usuario, grupo, tamaño y
+fecha de última modificación además del nombre.

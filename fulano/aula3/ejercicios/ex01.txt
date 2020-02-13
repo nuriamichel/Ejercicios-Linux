@@ -1,0 +1,7 @@
+Para definir un alias para editar el archivo
+/home/nuria/curso_linux/fulano/aula3/ejercicios/ex01.txt
+
+Se utiliza el siguiente comando:
+
+alias edicion='gedit /home/nuria/curso_linux/fulano/aula3/ejercicios/ex01.txt'
+
