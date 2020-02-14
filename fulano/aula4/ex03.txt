@@ -1,0 +1,109 @@
+JERCICIO 3
+1.¿Cómo se llama su máquina?
+comando: hostname
+Resultado: nuria-VirtualBox
+
+2.¿Cuál es la fecha y hora del sistema?
+comando: date
+Resultado: vie feb 14 08:28:29 -04 2020
+
+3.¿En qué ruta está el comando cp?
+comando: which cp
+Resultado: /bin/cp
+4.Intente adaptar los 10 ejemplos de usos del comando find para encontrar archivos en su hogar (https://e-tinet.com/linux/comando-find-linux/)
+
+4.1. 
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ find .
+.
+./salida.txt
+./prueba.txt
+./prueba
+./salida.err
+./forever.sh
+./ex03.txt
+./ejercicios.txt
+
+
+4.2. 
+nuria@nuria-VirtualBox:~/curso_linux/fulano$ find ./aula4 -maxdepth 1 -name *.sh
+./aula4/forever.sh
+
+4.3. 
+nuria@nuria-VirtualBox:~/curso_linux/fulano$ find ./aula4 -name 'salida*' ! -name '*.err'
+./aula4/salida.txt
+nuria@nuria-VirtualBox:~/curso_linux/fulano$ find ./aula4 -name 'salida*' ! -name '*.txt'
+./aula4/salida.err
+
+4.4. 
+nuria@nuria-VirtualBox:~/curso_linux/fulano$ find ./aula4 -type f -name "prueba*"
+./aula4/prueba.txt
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano$ find ./aula4 -type d -name "prueba*"
+./aula4/prueba
+
+4.5. 
+nuria@nuria-VirtualBox:~/cnuria@nuria-VirtualBox:~$ find ~ -type d -name ".*"
+/home/nuria/.mozilla
+/home/nuria/.gnupg
+/home/nuria/.local
+
+4.6.
+nuria@nuria-VirtualBox:~$ find . -type f -perm 700
+./.mozilla/firefox/3iqm9nxm.default-release/gmp-gmpopenh264/1.8.1/gmpopenh264.info
+./.mozilla/firefox/3iqm9nxm.default-release/gmp-gmpopenh264/1.8.1/libgmpopenh264.so
+./.mozilla/firefox/kbxxujih.default/times.json
+./curso_linux/fulano/aula4/forever.sh
+./.thunderbird/ko3j1wse.default-release/times.json
+./.thunderbird/qexjw7tc.default/times.json
+
+4.7.
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ find . –user nuria
+.
+./salida.txt
+./prueba.txt
+./prueba
+./salida.err
+./forever.sh
+./ex03.txt
+./ejercicios.txt
+
+4.8. 
+# find /var/www –group nombregrupo
+Para utilizarlo primero tenemos que ser root
+
+4.9.
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ find / -atime 5
+find: ‘/snap/core18/1668/etc/ssl/private’: Permiso denegado
+find: ‘/snap/core18/1668/root’: Permiso denegado
+find: ‘/snap/core18/1668/var/cache/ldconfig’: Permiso denegado
+find: ‘/snap/core18/1668/var/lib/private’: Permiso denegado
+find: ‘/snap/core18/1668/var/lib/snapd/void’: Permiso denegado
+find: ‘/snap/core18/1066/etc/ssl/private’: Permiso denegado
+find: ‘/snap/core18/1066/root’: Permiso denegado
+
+4.10.
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ find / -size 40M
+find: ‘/snap/core18/1668/etc/ssl/private’: Permiso denegado
+find: ‘/snap/core18/1668/root’: Permiso denegado
+find: ‘/snap/core18/1668/var/cache/ldconfig’: Permiso denegado
+find: ‘/snap/core18/1668/var/lib/private’: Permiso denegado
+find: ‘/snap/core18/1668/var/lib/snapd/void’: Permiso denegado
+find: ‘/snap/core18/1066/etc/ssl/private’: Permiso denegado
+find: ‘/snap/core18/1066/root’: Permiso denegado
+
+
+5.Vaya a / home / course e intente encontrar todos los archivos con la extensión .txt en
+todos los subdirectorios que utilizan el comando de búsqueda (consulte el manual)
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ find *txt
+ejercicios.txt
+ex03.txt
+prueba.txt
+salida.txt
+
+6.Intente usar el comando find con la opción exec para eliminar archivos con
+con extenciòn .so
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula2$ find . -type f -name "*.so" -exec rm {} \;
+

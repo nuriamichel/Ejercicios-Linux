@@ -1,0 +1,338 @@
+EJRCICIO 4
+1.¿Cuántas palabras, caracteres y líneas tiene el archivo nombres.txt?
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ wc nombres.txt
+ 142  284 2173 nombres.txt
+
+2.Use grep para obtener solo nombres que comiencen con A
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ grep "^A" nombres.txt
+Awilda Lazaro
+Awilda Lazaro
+Awilda Lazaro
+Awilda Lazaro
+Awilda Lazaro
+Awilda Lazaro
+Awilda Lazaro
+Awilda Lazaro
+Awilda Lazaro
+Awilda Lazaro
+Awilda Lazaro
+Awilda Lazaro
+
+3.Use grep para obtener solo nombres que NO comiencen con A. Ponga el resultado
+en nombres_sin_a.txt
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ grep -v "^A" nombres.txt
+Jolene Graydon 
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Leonel Zambrano
+Homer Whatley
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Leonel Zambrano
+Homer Whatley
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Homer Whatley
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Homer Whatley
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Homer Whatley
+Bennett Lanza
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Homer Whatley
+Bennett Lanza
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Leonel Zambrano
+Homer Whatley
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Leonel Zambrano
+Homer Whatley
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Homer Whatley
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Homer Whatley
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Homer Whatley
+Bennett Lanza
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Bennett Lanza
+Johna Stoddart
+Lucie Delaughter
+Homer Whatley
+Bennett Lanza
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Lucie Delaughter
+Jolene Graydon
+Sherrie Melrose
+Gavin Kelleher
+Shalonda Blakey
+Lucie Delaughter
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ grep -v "^A" nombres.txt > nombres_sin_a
+
+4.Use el comando diff para comparar nombres.txt con nombres_sin_a.txt
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ diff -y nombres.txt nombres_sin_a
+Jolene Graydon 							Jolene Graydon 
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Leonel Zambrano							Leonel Zambrano
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Leonel Zambrano							Leonel Zambrano
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Leonel Zambrano							Leonel Zambrano
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Leonel Zambrano							Leonel Zambrano
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Bennett Lanza							Bennett Lanza
+Johna Stoddart							Johna Stoddart
+Lucie Delaughter						Lucie Delaughter
+Homer Whatley							Homer Whatley
+Awilda Lazaro							Awilda Lazaro
+Bennett Lanza							Bennett Lanza
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Lucie Delaughter						Lucie Delaughter
+Jolene Graydon							Jolene Graydon
+Sherrie Melrose							Sherrie Melrose
+Gavin Kelleher							Gavin Kelleher
+Shalonda Blakey							Shalonda Blakey
+Lucie Delaughter						Lucie Delaughter
+
+5. El archivo /share/pesquisa.txt contiene resultados brutos de los votos de una elección con
+Varios candidatos. Cópialo en tu área. Use una combinación de sort, uniq y WC para
+diga cuántos candidatos diferentes fueron votados.
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ sort nombres.txt | uniq -c
+     12 Awilda Lazaro
+     18 Bennett Lanza
+     14 Gavin Kelleher
+     12 Homer Whatley
+     14 Johna Stoddart
+     13 Jolene Graydon
+      1 Jolene Graydon 
+      4 Leonel Zambrano
+     26 Lucie Delaughter
+     14 Shalonda Blakey
+     14 Sherrie Melrose
+
+6.Dibuje una línea de comando para imprimir en la pantalla el nombre de cada candidato y su
+número de votos en orden descendente de número de votos
+
+nuria@nuria-VirtualBox:~/curso_linux/fulano/aula4$ sort nombres.txt | uniq -c | sort -nr
+     26 Lucie Delaughter
+     18 Bennett Lanza
+     14 Sherrie Melrose
+     14 Shalonda Blakey
+     14 Johna Stoddart
+     14 Gavin Kelleher
+     13 Jolene Graydon
+     12 Homer Whatley
+     12 Awilda Lazaro
+      4 Leonel Zambrano
+      1 Jolene Graydon 
+
