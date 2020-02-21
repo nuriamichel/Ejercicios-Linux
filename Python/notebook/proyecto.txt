@@ -1,0 +1,2 @@
+Nuria,Raisa, Roberto.
+En resumen, el proposito de el proyecto es crear una pàgina web que recolecte toda la informacion acerca de un curso o tutorial y las muestre en una sola pagina. La ventaja de esta es que podemos hacer busquedas con cursos que no son muy mencionados en otras paginas virtuales de enseñanza, por ejemplo la musica el arte y deporte.
